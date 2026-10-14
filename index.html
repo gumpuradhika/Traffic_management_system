@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div>
+        <h1>🚦 Traffic Management System</h1>
+        <p>Smart City Traffic Control Dashboard</p>
+    </div>
+    <div class="live"><span></span> SYSTEM ONLINE</div>
+</header>
+
+<main class="container">
+    <section class="welcome">
+        <div>
+            <h2>Traffic Control Center</h2>
+            <p>Monitor traffic signals, vehicles and road congestion.</p>
+        </div>
+        <div id="clock">Loading time...</div>
+    </section>
+
+    <section class="stats">
+        <article class="stat-card">
+            <p>Total Vehicles</p>
+            <h2 id="totalVehicles">0</h2>
+            <small>Vehicles monitored</small>
+        </article>
+        <article class="stat-card">
+            <p>Active Signals</p>
+            <h2 id="activeSignals">4</h2>
+            <small>Intersections</small>
+        </article>
+        <article class="stat-card">
+            <p>Congestion Level</p>
+            <h2 id="congestion">Low</h2>
+            <small>Based on vehicle count</small>
+        </article>
+        <article class="stat-card">
+            <p>Emergency Alerts</p>
+            <h2 id="emergencyCount">0</h2>
+            <small>Priority requests</small>
+        </article>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <div>
+                <h2>Traffic Signal Control</h2>
+                <p>Control the signals at each intersection.</p>
+            </div>
+            <button id="autoBtn" class="primary">Start Automatic Mode</button>
+        </div>
+
+        <div class="signal-grid" id="signalGrid"></div>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <div>
+                <h2>Vehicle Management</h2>
+                <p>Add vehicles to simulate traffic conditions.</p>
+            </div>
+        </div>
+
+        <div class="vehicle-form">
+            <div>
+                <label for="roadSelect">Select Road</label>
+                <select id="roadSelect">
+                    <option value="0">Main Road</option>
+                    <option value="1">Market Road</option>
+                    <option value="2">Station Road</option>
+                    <option value="3">College Road</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="vehicleType">Vehicle Type</label>
+                <select id="vehicleType">
+                    <option value="Car">Car</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Truck">Truck</option>
+                </select>
+            </div>
+
+            <button id="addBtn" class="primary">+ Add Vehicle</button>
+            <button id="emergencyBtn" class="danger">
+                🚑 Emergency Priority
+            </button>
+            <button id="resetBtn" class="secondary">Reset Traffic</button>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <div>
+                <h2>Traffic Report</h2>
+                <p>Current vehicle distribution on each road.</p>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Road Name</th>
+                        <th>Vehicles</th>
+                        <th>Signal</th>
+                        <th>Traffic Status</th>
+                    </tr>
+                </thead>
+                <tbody id="trafficTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <div>
+                <h2>Activity Log</h2>
+                <p>Recent traffic control events.</p>
+            </div>
+            <button id="clearLogBtn" class="secondary">Clear Log</button>
+        </div>
+        <ul id="activityLog" class="activity-log"></ul>
+    </section>
+</main>
+
+<footer>
+    <p>Traffic Management System | Academic Project</p>
+    <p>Developed by G. Radhika</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
